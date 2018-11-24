@@ -19,7 +19,9 @@ func main() {
 	if err == nil {
 		conf = filterComments(confArray)
 	}
-	_ = conf
+
+	from := "--from=" + Handler
+
 	switch Query {
 	case "raw":
 		Raw(Source)
@@ -28,11 +30,11 @@ func main() {
 		Env()
 		return
 	case "plain":
-		Plain("pandoc", append(conf, "--from=markdown", "--to=plain", Source))
+		Plain("pandoc", append(conf, from, "--to=plain", Source))
 	case "html4", "xhtml":
-		HTML("pandoc", append(conf, "--from=markdown", "--to=html", Source))
+		HTML("pandoc", append(conf, from, "--to=html", Source))
 	default:
-		HTML("pandoc", append(conf, "--from=markdown", "--to=html5", Source))
+		HTML("pandoc", append(conf, from, "--to=html5", Source))
 	}
 }
 
