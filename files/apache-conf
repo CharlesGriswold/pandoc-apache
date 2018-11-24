@@ -1,12 +1,26 @@
 <IfModule mime_module>
+	AddHandler docbook  .docbook
+	AddHandler docx     .docx
+	AddHandler epub     .epub
+	AddHandler haddock  .haddock
 	AddHandler markdown .md
+	AddHandler odt      .odt
+	AddHandler opml     .opml
+	AddHandler org      .org
 	AddHandler rst      .rst
 	AddHandler t2t      .t2t
 	AddHandler textile  .textile
 </IfModule>
 
 <IfModule actions_module>
+	Action docbook  /cgi-bin/pandoc-apache
+	Action docx     /cgi-bin/pandoc-apache
+	Action epub     /cgi-bin/pandoc-apache
+	Action haddock  /cgi-bin/pandoc-apache
 	Action markdown /cgi-bin/pandoc-apache
+	Action odt      /cgi-bin/pandoc-apache
+	Action opml     /cgi-bin/pandoc-apache
+	Action org      /cgi-bin/pandoc-apache
 	Action rst      /cgi-bin/pandoc-apache
 	Action t2t      /cgi-bin/pandoc-apache
 	Action textile  /cgi-bin/pandoc-apache
