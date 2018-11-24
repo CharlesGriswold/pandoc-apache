@@ -9,6 +9,7 @@ To install pandoc-apache in \*nix systems:
 
     git clone https://github.com/CharlesGriswold/pandoc-apache.git
     sudo make install
+    sudo a2enconf pandoc-apache.conf
     sudo /etc/init.d/apache2 reload
 
 using `go get` to retrieve pandoc-apache does work, but is not recommended since doing that would install a useless copy of the pandoc-apache binary into your Go/bin directory.
