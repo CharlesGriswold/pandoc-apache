@@ -1,11 +1,20 @@
 <IfModule mime_module>
 	AddHandler markdown .md
+	AddHandler rst      .rst
+	AddHandler t2t      .t2t
+	AddHandler textile  .textile
 </IfModule>
 
 <IfModule actions_module>
 	Action markdown /cgi-bin/pandoc-apache
+	Action rst      /cgi-bin/pandoc-apache
+	Action t2t      /cgi-bin/pandoc-apache
+	Action textile  /cgi-bin/pandoc-apache
 </IfModule>
 
 <IfModule dir_module>
 	DirectoryIndex index.md
+	DirectoryIndex index.rst
+	DirectoryIndex index.t2t
+	DirectoryIndex index.textile
 </IfModule>
