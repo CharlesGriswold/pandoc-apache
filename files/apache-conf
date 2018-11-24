@@ -1,0 +1,11 @@
+<IfModule mime_module>
+	AddHandler markdown .md
+</IfModule>
+
+<IfModule actions_module>
+	Action markdown /cgi-bin/pandoc-apache
+</IfModule>
+
+<IfModule dir_module>
+	DirectoryIndex index.md
+</IfModule>
