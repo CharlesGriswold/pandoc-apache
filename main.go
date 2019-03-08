@@ -31,10 +31,12 @@ func main() {
 		return
 	case "plain":
 		Plain("pandoc", append(conf, from, "--to=plain", Source))
+	case "dokuwiki":
+		Plain("pandoc", append(conf, from, "--to=dokuwiki", Source))
 	case "html4", "xhtml":
 		HTML("pandoc", append(conf, from, "--to=html", Source))
 	default:
-		HTML("pandoc", append(conf, from, "--to=html5", Source))
+		HTML("pandoc", append(conf, "--columns=99999", from, "--to=html5", Source))
 	}
 }
 
