@@ -29,10 +29,8 @@ func main() {
 	case "env":
 		Env()
 		return
-	case "plain":
-		Plain("pandoc", append(conf, from, "--to=plain", Source))
-	case "dokuwiki":
-		Plain("pandoc", append(conf, from, "--to=dokuwiki", Source))
+	case "plain", "markdown", "markdown_strict", "markdown_phpextra", "markdown_github", "markdown_mmd", "commonmark", "rst", "latex", "context", "man", "mediawiki", "dokuwiki", "zimwiki", "textile", "org", "texinfo", "opml", "docbook", "docbook5", "haddock", "rtf", "asciidoc", "icml", "tei":
+		Plain("pandoc", append(conf, from, "--to=" + Query, Source))
 	case "html4", "xhtml":
 		HTML("pandoc", append(conf, from, "--to=html", Source))
 	default:
