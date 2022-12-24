@@ -8,6 +8,7 @@ Output is HTML5 by default. Other output types can be specified by append a ?TYP
 To install pandoc-apache in \*nix systems: 
 
     git clone https://github.com/CharlesGriswold/pandoc-apache.git
+    cd pandoc-apache/
     sudo make install
     sudo a2enconf pandoc-apache.conf
     sudo /etc/init.d/apache2 reload
